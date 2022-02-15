@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:user_list/button_counter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,7 +9,14 @@ class HomePage extends StatelessWidget {
       title: "User List",
       home: Scaffold(
         appBar: AppBar(title: Text("My first app"),),
-        body: Center(child: ButtonCounter(defaultCount: 5,)),
+        body: Center(child: Column(
+          children: [
+            Text("Hello World!", style: TextStyle(fontSize: 20.0),),
+            Text("Hello World!", style: TextStyle(fontSize: 20.0),),
+            Text("Hello World!", style: TextStyle(fontSize: 20.0),),
+            Text("Hello World!", style: TextStyle(fontSize: 20.0),),
+          ],
+        )),
       ),
     );
   }
