@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:user_list/element_color.dart';
 
 class ButtonCounter extends StatefulWidget {
   final int defaultCount;
@@ -22,26 +21,14 @@ class _ButtonCounterState extends State<ButtonCounter> {
 
   @override
   Widget build(BuildContext context) {
-    return ElementColor(
-      color: Colors.red,
-      child: Builder(
-        builder: (context) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(_count.toString(), style: TextStyle(color: ElementColor.of(context).color),),
-              ElevatedButton(
-                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(ElementColor.of(context).color)),
-                  onPressed: () {
-                    setState(() {
-                      _count++;
-                    });
-                  },
-                  child: Text("Click"))
-            ],
-          );
-        },
-      ),
-    );
+    return Column(mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+      Text(_count.toString()),
+      ElevatedButton(onPressed: () {
+        setState(() {
+          _count++;
+        });
+      }, child: Text("Click"))
+    ],);
   }
 }
